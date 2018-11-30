@@ -1,0 +1,155 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+    <!-- Material Design Lite -->
+    <title>Inicio</title>
+
+    <link href="<?= base_url()?>Css/bootstrap-material-design.css" type="text/css" rel="stylesheet">
+
+
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Bienvenido</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+
+                <a class="mdl-navigation__link" href="#"> <?php echo 'Bienvenido '.$this->session->userdata('nombre');; ?></a>
+                <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/cerrar_sesion">Cerrar Sesion</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">
+
+            <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/cerrar_sesion">Salir</a>
+
+        </nav>
+    </div>
+
+    <br>
+    <div>
+
+
+
+
+        <div style="margin-left: 50px ;float: left;" class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2  class="mdl-card__title-text">Accidentes</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                En este boton podra visualizar los Accidentes cargados en la base de Datos.
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+
+
+
+                <a style="color: #00CC00"  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>Accidente_Home/index">
+                    Ir a Accidentes
+                </a>
+
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <div style="margin-left: 50px; float: left; " class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Inculpables</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                En esta seccion se encuentran los Inculpables y los empleados que han presentado algun certificado médico
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a style="color: #9C27B0" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>HomeControler/index">
+                    Ir a Inculpables
+                </a>
+            </div>
+        </div>
+
+
+        <?php if ($_SESSION['categoria']=='3'){
+    echo '
+      <div style="margin-left: 50px; float: left; " class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Personal</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            En esta sección se encuentran los datos de el personal que trabaja actualmente en la Municipalidad
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a style="color: #0c7cd5" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=';?><?= base_url();?>Config_Personas/index<?php echo'>
+                Ver Personal
+            </a>
+        </div>
+
+<br>
+    </div>
+    <div style="margin-top: 10px">
+
+    <div style="margin-left: 50px; float: left; " class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Prestadores</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            En esta sección se encuentran los Prestadores asociados a la Municipalidad que brindan atenciones medicas a los pacientes accidentados
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a style="color: #857a1f" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=';?><?= base_url();?>Prestadores/index<?php echo'>
+                Ver Prestadores
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+<div style="margin-left: 50px ;float: left;" class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Configuracion de Usuarios</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        En esta sección se encuentran Ususarios y sus respectivos permisos para decidir que mostrar a cada uno
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a style="color: #FF5722" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href=';?><?= base_url();?>Confg/index<?php echo'>
+            Configurar Usuarios
+        </a>
+    </div>
+
+</div>
+'
+
+    ;}?>
+    <div style="margin-left: 50px; float: left; " class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Cambio de Funcion</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Aqui encontraremos los empleados que por diferentes circunstancias han sido reubicados en otros puestos de trabajo
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a style="color: #9C27B0" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>CambiodeFuncion_Home/index">
+                Ir a Cambio de Funcion
+            </a>
+        </div>
+    </div>
+    </div>
+<body/>
+</html>

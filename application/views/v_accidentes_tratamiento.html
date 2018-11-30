@@ -1,0 +1,105 @@
+<html>
+<head>
+    <!-- Material Design Lite -->
+    <title>UERT</title>
+
+    <link href="<?= base_url()?>Css/bootstrap-material-design.css" type="text/css" rel="stylesheet">
+
+
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">UERT</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+
+                <a class="mdl-navigation__link" href="#"> <?php echo 'Bienvenido '.$this->session->userdata('nombre');; ?></a>
+                <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/cerrar_sesion">Cerrar Sesion</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/Logueado">Accidentes (Pendientes)</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>Config_Personas/index">Configuracion</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>cambiarpass/index">Cambiar Contraseña</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>Accidente_Home/listar_todos">Ver todos Accidentes</a>
+
+        </nav>
+    </div>
+
+<? echo $Mensaje; ?>
+
+<br> <br>
+    <div style="margin-left: 50px" class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2  class="mdl-card__title-text">Aceptar Tratamiento</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Aceptando el Tratamiento no se da el Alta Medico hasta que el paciente este sano por completo.
+            El legajo estara disponible para seguir cargando archivos hasta que se de el "Alta Medico"
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+
+
+
+               <a style="color: #00CC00"  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>Tratamiento/seleccionAceptar">
+                Aceptar Tratamiento
+            </a>
+
+           </form>
+        </div>
+
+    </div>
+
+     <br>
+    <div style="margin-left: 50px" class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Rechazar Tratamiento</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Rechazando el Tratamiento se da de alta Medica y el estado del Legajo cambia a Rechazado
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a style="color: indianred" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>Tratamiento/seleccionRechazo">
+                Rechazar Tratamiento
+            </a>
+        </div>
+
+    </div>
+
+     <br>
+    <div style="margin-left: 50px" class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Alta Medica</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+           Dando de Alta Medica, se considera que el empleado puede volver a trabajar y el Legajo se cierra
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a style="color: #0c7cd5" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="<?= base_url();?>Tratamiento/seleccionAlta">
+                Dar Alta Medica
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+    <body/>
+</html>

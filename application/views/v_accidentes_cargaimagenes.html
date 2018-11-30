@@ -1,0 +1,66 @@
+<html>
+<head>
+    <!-- Material Design Lite -->
+    <title>UERT</title>
+
+    <link href="<?= base_url()?>Css/bootstrap-material-design.css" type="text/css" rel="stylesheet">
+    <?php
+foreach($css_files as $file): ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
+    <?php endforeach; ?>
+    <?php foreach($js_files as $file): ?>
+    <script src="<?php echo $file; ?>"></script>
+    <?php endforeach; ?>
+
+
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Carga de Archivos</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+
+                <a class="mdl-navigation__link" href="#"> <?php echo 'Bienvenido '.$this->session->userdata('nombre');; ?></a>
+                <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/cerrar_sesion">Cerrar Sesion</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/Logueado">Volver</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>Config_Personas/index">Configuracion</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>cambiarpass/index">Cambiar Contraseña</a>
+
+        </nav>
+    </div>
+
+
+
+    <div class="card-header" style="margin-left: 20px; margin-right: 20px; margin-top: 30px" >
+        <?php
+  echo $output; ?>
+
+<br><br><br>
+
+
+
+
+
+
+
+    <body/>
+</html>

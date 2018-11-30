@@ -1,0 +1,67 @@
+<html>
+<head>
+    <!-- Material Design Lite -->
+    <title>Calendario</title>
+
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+
+    <script src="http://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+
+    <script>
+
+        $(function() {
+
+            $('#calendar').fullCalendar({
+                defaultView: 'month',
+                height: 600,
+
+                events: <?php echo $json; ?>,
+
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Calendario</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Menu</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="<?= base_url();?>Config_Personas/index">Administrar Personal</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/logueado">Volver</a>
+            <a class="mdl-navigation__link" href="<?= base_url();?>Welcome/cerrar_sesion">Cerrar Sesion</a>
+        </nav>
+    </div>
+
+
+        <div style="margin-left: 50px;margin-top: 10px;margin-right: 10px" id='calendar'></div>
+
+    </div>
+
+
+</body>
+</html>

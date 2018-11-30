@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+    
+    <title>Iniciar Sesion</title>
+    <link rel = "stylesheet" type = "text/css"
+          href ="<?= base_url()?>/Css/login.css" />     </head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <!-- Mixins-->
+        <!-- Pen Title-->
+        <div class="pen-title">
+            <h1>RRHH Lavalle</h1>
+        </div>
+        <div class="container">
+            <div class="card"></div>
+            <div class="card">
+                <h1 class="title">Ingresar</h1>
+                <form METHOD="POST" action="<?php echo base_url() ?>welcome/iniciar_sesion_post">
+                    <div class="input-container">
+                        <input type="text" name ='username' id="username" required="required"/>
+                        <label for="Username">Nombre de Usuario</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" name='password' id="password" required="required"/>
+                        <label for="Password">Contraseña</label>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="button-container">
+                        <button><span>Entrar</span></button>
+                    </div>
+
+                </form>
+            </div>
+
+</div>
+</body>
+</html>
